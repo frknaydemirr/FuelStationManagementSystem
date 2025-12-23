@@ -5,7 +5,7 @@
 DELIMITER $$
 
 -- 1. EMPLOYEE MANAGEMENT
--- Table includes CHECK constraints for data validation [cite: 196]
+
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
     FirstName VARCHAR(50) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE SalesTransactions (
 )$$
 
 -- 6. WEAK ENTITY IMPLEMENTATION
--- SaleDetails is a weak entity; using ON DELETE CASCADE for Referential Integrity [cite: 182, 187]
+
 CREATE TABLE StoreSales (
     StoreID BIGINT PRIMARY KEY AUTO_INCREMENT,
     SaleDate DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -94,7 +94,7 @@ CREATE TABLE SaleDetails (
 )$$
 
 -- 7. MANDATORY STORED PROCEDURE USAGE
--- Handles primary business function: fuel sales with atomic transaction [cite: 140, 153]
+
 CREATE PROCEDURE SP_ComplexFuelSale(
     IN p_EmpID INT, IN p_CustID INT, IN p_FuelID INT, IN p_PumpID INT,
     IN p_Liters DECIMAL(10,2), IN p_Total DECIMAL(10,2), IN p_Method VARCHAR(50)
@@ -117,7 +117,7 @@ BEGIN
 END$$
 
 -- 8. EFFICIENT QUERY IMPLEMENTATION (EXPECTED METHOD)
--- Logic handled within SQL engine to find top performer [cite: 159, 167]
+
 CREATE PROCEDURE SP_MostUsedPump()
 BEGIN
     SELECT PumpID, SUM(LitersSold) as TotalLiters
