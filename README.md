@@ -31,6 +31,90 @@
 <img width="961" height="126" alt="image" src="https://github.com/user-attachments/assets/63ce5832-5e4a-437f-9168-a335cae7b2cb" />
 
 
+## 3. Database Operations Scripts
+
+### Fuel Types
+```sql
+INSERT INTO fueltypes (FuelName, CurrentPricePerLiter, CurrentStockLiters, LastUpdated) VALUES (?, ?, ?, CURRENT_TIMESTAMP);
+SELECT * FROM fueltypes WHERE FuelTypeID = ?;
+SELECT * FROM fueltypes;
+UPDATE fueltypes SET FuelName = ?, CurrentPricePerLiter = ?, CurrentStockLiters = ?, LastUpdated = CURRENT_TIMESTAMP WHERE FuelTypeID = ?;
+DELETE FROM fueltypes WHERE FuelTypeID = ?;
+```
+
+### Employees
+```sql
+INSERT INTO employees (FirstName, LastName, Position, TC_KimlikNo, HireDate, Salary, Shift, Email) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+SELECT * FROM employees WHERE EmployeeID = ?;
+SELECT * FROM employees;
+UPDATE employees SET FirstName = ?, LastName = ?, Position = ?, Salary = ?, Shift = ?, Email = ? WHERE EmployeeID = ?;
+DELETE FROM employees WHERE EmployeeID = ?;
+```
+
+### Sales Transactions
+```sql
+INSERT INTO salestransactions (TransactionDate, EmployeeID, CustomerID, FuelTypeID, PumpID, LitersSold, PriceAtSale, TotalAmount, PaymentMethod, DiscountApplied) VALUES (CURRENT_TIMESTAMP, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+SELECT * FROM salestransactions WHERE EmployeeID = ?;
+SELECT * FROM salestransactions WHERE PumpID = ?;
+DELETE FROM salestransactions WHERE TransactionID = ?;
+SELECT * FROM salestransactions WHERE house_id = ? AND status = 'ACTIVE' AND end_date >= CURRENT_DATE();
+```
+
+### Fuel Pumps
+```sql
+INSERT INTO fuelpumps (FuelTypeCapacity, LastMaintenanceDate, Status, FuelTypeID) VALUES (?, ?, ?, ?);
+SELECT * FROM fuelpumps WHERE PumpID = ?;
+SELECT * FROM fuelpumps;
+UPDATE fuelpumps SET FuelTypeCapacity = ?, LastMaintenanceDate = ?, Status = ?, FuelTypeID = ? WHERE PumpID = ?;
+DELETE FROM fuelpumps WHERE PumpID = ?;
+```
+
+### Users
+```sql
+INSERT INTO users (EmployeeID, Username, Password, IsActive) VALUES (?, ?, ?, ?);
+SELECT * FROM users WHERE UserID = ?;
+SELECT * FROM users WHERE Username = ? AND Password = ? AND IsActive = 1;
+UPDATE users SET Username = ?, Password = ?, IsActive = ? WHERE UserID = ?;
+DELETE FROM users WHERE UserID = ?;
+```
+
+### Employee Phones
+```sql
+INSERT INTO employeephones (EmployeeID, PhoneNumber) VALUES (?, ?);
+SELECT * FROM employeephones WHERE EmployeeID = ?;
+SELECT * FROM employeephones;
+UPDATE employeephones SET PhoneNumber = ? WHERE PhoneID = ?;
+DELETE FROM employeephones WHERE PhoneID = ?;
+```
+
+### Store Sales
+```sql
+INSERT INTO storesales (SaleDate, EmployeeID, TotalAmount) VALUES (CURRENT_TIMESTAMP, ?, ?);
+SELECT * FROM storesales WHERE StoreID = ?;
+SELECT * FROM storesales WHERE EmployeeID = ?;
+UPDATE storesales SET TotalAmount = ?, SaleDate = ? WHERE StoreID = ?;
+DELETE FROM storesales WHERE StoreID = ?;
+```
+
+### Sale Details
+```sql
+INSERT INTO saledetails (StoreID, ProductID, Quantity, PriceAtSale) VALUES (?, ?, ?, ?);
+SELECT * FROM saledetails WHERE StoreID = ?;
+SELECT * FROM saledetails WHERE DetailID = ?;
+UPDATE saledetails SET ProductID = ?, Quantity = ?, PriceAtSale = ? WHERE DetailID = ?;
+DELETE FROM saledetails WHERE DetailID = ?;
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
