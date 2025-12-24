@@ -4,10 +4,15 @@
 <h1>Er Diagrams</h1>
 <img width="1717" height="899" alt="image" src="https://github.com/user-attachments/assets/ce5ae4f1-b578-4ae3-b3ea-f2d93d48d004" />
 
+<h1>Mapping Diagrams</h1>
+<img width="15278" height="9131" alt="Adsız-2025-11-17-0145(Mapping)" src="https://github.com/user-attachments/assets/b8cc3fe7-cc29-453b-b026-9826a1e0d6cc" />
+
+
 
 <h2>2.Database  Schema (Database Scripts)</h2>
 <p>Employees</p>
 <img width="964" height="330" alt="image" src="https://github.com/user-attachments/assets/77c94dfa-436e-4884-8b1c-d88d9932827f" />
+
 
 <p>Employeephones</p>
 <img width="962" height="213" alt="image" src="https://github.com/user-attachments/assets/8ea06850-8ba7-4241-a30b-2fc24c189b2b" />
