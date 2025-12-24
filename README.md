@@ -1,6 +1,10 @@
 <h1>Database Diagrams</h1>
 <img width="1263" height="877" alt="image" src="https://github.com/user-attachments/assets/cb757438-b06c-4500-af5e-8b085e833a9c" />
 
+<h1>Er Diagrams</h1>
+<img width="1717" height="899" alt="image" src="https://github.com/user-attachments/assets/ce5ae4f1-b578-4ae3-b3ea-f2d93d48d004" />
+
+
 <h2>2.Database  Schema (Database Scripts)</h2>
 <p>Employees</p>
 <img width="964" height="330" alt="image" src="https://github.com/user-attachments/assets/77c94dfa-436e-4884-8b1c-d88d9932827f" />
