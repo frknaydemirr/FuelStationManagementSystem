@@ -11,10 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Fuel Station Management System - Güzelleştirilmiş Login Ekranı
- * Tüm bileşenler (Username, Password, Button) 300px genişliğinde hizalanmıştır.
- */
+
 public class LoginScreen extends JFrame {
 
     private JTextField txtUsername;
@@ -22,7 +19,7 @@ public class LoginScreen extends JFrame {
     private JButton btnLogin;
     private static LanguageManager lm = LanguageManager.getInstance();
 
-    // Modern Renk Paleti
+
     private final Color PRIMARY_COLOR = new Color(41, 128, 185); // Koyu Mavi
     private final Color HOVER_COLOR = new Color(52, 152, 219);   // Açık Mavi
     private final Color BACKGROUND_COLOR = new Color(248, 249, 250);
@@ -30,7 +27,7 @@ public class LoginScreen extends JFrame {
     private final Color INPUT_BORDER = new Color(223, 230, 233);
 
     public LoginScreen() {
-        // Pencere Ayarları
+
         super("Fuel Station Management System");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -177,6 +174,7 @@ public class LoginScreen extends JFrame {
     }
 
     // Giriş Denemesi Mantığı
+// Giriş Denemesi Mantığı
     private void attemptLogin() {
         String username = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
@@ -185,9 +183,9 @@ public class LoginScreen extends JFrame {
             JOptionPane.showMessageDialog(this, "Login Successful!",
                     "Fuel Station", JOptionPane.INFORMATION_MESSAGE);
 
-            // Başarılı girişte ana sayfaya yönlendir
-            new FuelSaleTransactionScreen().setVisible(true);
-            dispose();
+            // Başarılı girişte direkt Dashboard sayfasına yönlendirilir
+            new DashboardScreen().setVisible(true);
+            dispose(); // Login penceresini kapatır
         } else {
             JOptionPane.showMessageDialog(this, "Invalid credentials. Please try again.",
                     "Login Error", JOptionPane.ERROR_MESSAGE);
