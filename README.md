@@ -2,7 +2,8 @@
 <img width="1263" height="877" alt="image" src="https://github.com/user-attachments/assets/cb757438-b06c-4500-af5e-8b085e833a9c" />
 
 <h1>Er Diagrams</h1>
-<img width="10415" height="6759" alt="LastEr" src="https://github.com/user-attachments/assets/188de53a-be30-4a29-9e0d-e91c90a054ce" />
+<img width="1440" height="934" alt="image" src="https://github.com/user-attachments/assets/85f80db5-f5e2-40b6-9c1c-acd5b7a92a1e" />
+
 
 
 <h1>Mapping Diagrams</h1>
