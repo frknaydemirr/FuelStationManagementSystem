@@ -2,10 +2,50 @@
 <img width="1263" height="877" alt="image" src="https://github.com/user-attachments/assets/cb757438-b06c-4500-af5e-8b085e833a9c" />
 
 <h1>Er Diagrams</h1>
-<img width="1717" height="899" alt="image" src="https://github.com/user-attachments/assets/ce5ae4f1-b578-4ae3-b3ea-f2d93d48d004" />
+<img width="10415" height="6759" alt="LastEr" src="https://github.com/user-attachments/assets/188de53a-be30-4a29-9e0d-e91c90a054ce" />
+
 
 <h1>Mapping Diagrams</h1>
 <img width="15278" height="9131" alt="Adsız-2025-11-17-0145(Mapping)" src="https://github.com/user-attachments/assets/b8cc3fe7-cc29-453b-b026-9826a1e0d6cc" />
+
+<h1>UI Design (Pages)</h1>
+
+<h2>Login Page</h2>
+<img width="408" height="436" alt="image" src="https://github.com/user-attachments/assets/f6169deb-c66e-4a19-87f1-dc491a77e264" />
+
+<h2>Admin Page</h2>
+<img width="829" height="939" alt="image" src="https://github.com/user-attachments/assets/337294d6-81de-4d1e-a35a-5a1c0467810c" />
+
+<h2>FuelSales Page</h2>
+<img width="984" height="589" alt="image" src="https://github.com/user-attachments/assets/7e496abc-3edc-4a23-acb0-e1313f1fc0ed" />
+
+<h2>User Account Page</h2>
+<img width="1079" height="582" alt="image" src="https://github.com/user-attachments/assets/71b7d02c-f23b-4464-b998-feb5495d7e43" />
+
+<h2>FuelTypes Page</h2>
+<img width="1081" height="591" alt="image" src="https://github.com/user-attachments/assets/3ae6ae98-83ac-487a-80f3-853e747a2fcd" />
+
+<h2>Employee's Phone Page</h2>
+<img width="1085" height="586" alt="image" src="https://github.com/user-attachments/assets/7464c419-ebfe-4ab5-b55f-68083be26099" />
+
+<h2>Employee Page</h2>
+<img width="1335" height="636" alt="image" src="https://github.com/user-attachments/assets/fe1d7648-708e-4135-8bf8-005d4a419b52" />
+
+<h2>FuelPump Page</h2>
+<img width="1079" height="590" alt="image" src="https://github.com/user-attachments/assets/e5d990e9-cad4-450d-8076-78bf297f5225" />
+
+<h2>StoreSales Page</h2>
+<img width="1079" height="587" alt="image" src="https://github.com/user-attachments/assets/4acba91b-049d-4f20-8079-413ff3249897" />
+
+
+
+
+
+
+
+
+
+
 
 
 
