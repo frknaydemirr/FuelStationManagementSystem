@@ -12,7 +12,6 @@ public class EmployeeRecordScreen extends JFrame {
 
     private JTable employeeTable;
 
-    // Modern Color Palette
     private final Color PRIMARY_COLOR = new Color(41, 128, 185);
     private final Color WARNING_COLOR = new Color(243, 156, 18);
     private final Color DANGER_COLOR = new Color(231, 76, 60);
@@ -31,14 +30,12 @@ public class EmployeeRecordScreen extends JFrame {
         mainContainer.setOpaque(false);
         mainContainer.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // HEADER
         JLabel lblHeader = new JLabel("EMPLOYEE MANAGEMENT SYSTEM");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblHeader.setForeground(PRIMARY_COLOR);
         lblHeader.setBorder(new EmptyBorder(0, 0, 15, 0));
         mainContainer.add(lblHeader, BorderLayout.NORTH);
 
-        // TABLE
         employeeTable = new JTable();
         styleTable(employeeTable);
         loadEmployeeData();
@@ -48,29 +45,24 @@ public class EmployeeRecordScreen extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         mainContainer.add(scrollPane, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         controlPanel.setOpaque(false);
 
-        // --- GÜNCELLENDİ: Dashboard'a Dönüş Butonu ---
         JButton btnBack = new JButton("Back to Dashboard");
         styleButton(btnBack, SECONDARY_COLOR);
         btnBack.addActionListener(e -> {
-            new DashboardScreen().setVisible(true); // Dashboard'a yönlendirir
-            this.dispose(); // Mevcut ekranı kapatır
+            new DashboardScreen().setVisible(true);
+            this.dispose(); 
         });
 
-        // Update Button
         JButton btnUpdateEmployee = new JButton("Update Selected");
         styleButton(btnUpdateEmployee, WARNING_COLOR);
         btnUpdateEmployee.addActionListener(e -> updateEmployee());
 
-        // Delete Button
         JButton btnDeleteEmployee = new JButton("Delete Selected");
         styleButton(btnDeleteEmployee, DANGER_COLOR);
         btnDeleteEmployee.addActionListener(e -> deleteSelectedEmployee());
 
-        // Create Button
         JButton btnCreateEmployee = new JButton("Add New Employee");
         styleButton(btnCreateEmployee, SUCCESS_COLOR);
         btnCreateEmployee.addActionListener(e -> createEmployee());

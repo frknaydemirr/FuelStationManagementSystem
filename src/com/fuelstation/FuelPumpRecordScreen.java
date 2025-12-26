@@ -8,12 +8,10 @@ import java.awt.*;
 import java.sql.*;
 import java.util.Vector;
 
-//FuelPumps
 public class FuelPumpRecordScreen extends JFrame {
 
     private JTable pumpTable;
 
-    // Modern Renk Paleti
     private final Color PRIMARY_COLOR = new Color(41, 128, 185);
     private final Color WARNING_COLOR = new Color(243, 156, 18);
     private final Color DANGER_COLOR = new Color(231, 76, 60);
@@ -32,14 +30,12 @@ public class FuelPumpRecordScreen extends JFrame {
         mainContainer.setOpaque(false);
         mainContainer.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // HEADER
         JLabel lblHeader = new JLabel("FUEL PUMP MANAGEMENT");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblHeader.setForeground(PRIMARY_COLOR);
         lblHeader.setBorder(new EmptyBorder(0, 0, 15, 0));
         mainContainer.add(lblHeader, BorderLayout.NORTH);
 
-        // TABLE
         pumpTable = new JTable();
         styleTable(pumpTable);
         loadPumpData();
@@ -49,7 +45,6 @@ public class FuelPumpRecordScreen extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         mainContainer.add(scrollPane, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         controlPanel.setOpaque(false);
 
@@ -118,7 +113,6 @@ public class FuelPumpRecordScreen extends JFrame {
         Connection conn = DBConnection.getConnection();
         if (conn == null) return;
 
-        // DB Şemasına göre: PumpID, Status, LastMaintenanceDate
         String sql = "SELECT PumpID, Status, LastMaintenanceDate FROM fuelpumps";
 
         try (Statement stmt = conn.createStatement();
@@ -154,7 +148,6 @@ public class FuelPumpRecordScreen extends JFrame {
 
         if (option == JOptionPane.OK_OPTION) {
             Connection conn = DBConnection.getConnection();
-            // Yeni pompa eklerken bugünün tarihini bakım tarihi olarak atıyoruz
             String sql = "INSERT INTO fuelpumps (Status, LastMaintenanceDate) VALUES (?, CURRENT_DATE)";
 
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {

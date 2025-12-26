@@ -8,12 +8,10 @@ import java.awt.*;
 import java.sql.*;
 import java.util.Vector;
 
-//FuelTypes
 public class FuelTypeRecordScreen extends JFrame {
 
     private JTable fuelTable;
 
-    // Modern Renk Paleti
     private final Color PRIMARY_COLOR = new Color(41, 128, 185);
     private final Color WARNING_COLOR = new Color(243, 156, 18);
     private final Color DANGER_COLOR = new Color(231, 76, 60);
@@ -32,14 +30,12 @@ public class FuelTypeRecordScreen extends JFrame {
         mainContainer.setOpaque(false);
         mainContainer.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // HEADER
         JLabel lblHeader = new JLabel("FUEL TYPE MANAGEMENT");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblHeader.setForeground(PRIMARY_COLOR);
         lblHeader.setBorder(new EmptyBorder(0, 0, 15, 0));
         mainContainer.add(lblHeader, BorderLayout.NORTH);
 
-        // TABLE
         fuelTable = new JTable();
         styleTable(fuelTable);
         loadFuelData();
@@ -49,7 +45,6 @@ public class FuelTypeRecordScreen extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         mainContainer.add(scrollPane, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         controlPanel.setOpaque(false);
 
@@ -118,7 +113,7 @@ public class FuelTypeRecordScreen extends JFrame {
         Connection conn = DBConnection.getConnection();
         if (conn == null) return;
 
-        // DB Şemasına göre: FuelTypeID, FuelName, CurrentPricePerLiter, CurrentStockLiters, LastUpdated
+    
         String sql = "SELECT FuelTypeID, FuelName, CurrentPricePerLiter, CurrentStockLiters, LastUpdated FROM fueltypes";
 
         try (Statement stmt = conn.createStatement();

@@ -7,12 +7,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.sql.*;
 import java.util.Vector;
-//EmployeePhone
+
 public class EmployeePhoneRecordScreen extends JFrame {
 
     private JTable phoneTable;
 
-    // Modern Renk Paleti
+
     private final Color PRIMARY_COLOR = new Color(41, 128, 185);
     private final Color WARNING_COLOR = new Color(243, 156, 18);
     private final Color DANGER_COLOR = new Color(231, 76, 60);
@@ -31,14 +31,12 @@ public class EmployeePhoneRecordScreen extends JFrame {
         mainContainer.setOpaque(false);
         mainContainer.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // HEADER
         JLabel lblHeader = new JLabel("EMPLOYEE PHONE DIRECTORY");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblHeader.setForeground(PRIMARY_COLOR);
         lblHeader.setBorder(new EmptyBorder(0, 0, 15, 0));
         mainContainer.add(lblHeader, BorderLayout.NORTH);
 
-        // TABLE
         phoneTable = new JTable();
         styleTable(phoneTable);
         loadPhoneData();
@@ -48,7 +46,6 @@ public class EmployeePhoneRecordScreen extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         mainContainer.add(scrollPane, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         controlPanel.setOpaque(false);
 
@@ -117,7 +114,6 @@ public class EmployeePhoneRecordScreen extends JFrame {
         Connection conn = DBConnection.getConnection();
         if (conn == null) return;
 
-        // SQL JOIN to show employee names instead of just IDs
         String sql = "SELECT ep.PhoneID, e.FirstName, e.LastName, ep.PhoneNumber " +
                 "FROM employeephones ep " +
                 "JOIN employees e ON ep.EmployeeID = e.EmployeeID";
@@ -148,7 +144,6 @@ public class EmployeePhoneRecordScreen extends JFrame {
         JComboBox<String> cmbEmployee = new JComboBox<>();
         JTextField txtPhone = new JTextField();
 
-        // Populate employees list for the foreign key
         try (Connection conn = DBConnection.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT EmployeeID, FirstName, LastName FROM employees")) {

@@ -20,8 +20,8 @@ public class LoginScreen extends JFrame {
     private static LanguageManager lm = LanguageManager.getInstance();
 
 
-    private final Color PRIMARY_COLOR = new Color(41, 128, 185); // Koyu Mavi
-    private final Color HOVER_COLOR = new Color(52, 152, 219);   // Açık Mavi
+    private final Color PRIMARY_COLOR = new Color(41, 128, 185); 
+    private final Color HOVER_COLOR = new Color(52, 152, 219);   
     private final Color BACKGROUND_COLOR = new Color(248, 249, 250);
     private final Color TEXT_DARK = new Color(45, 52, 54);
     private final Color INPUT_BORDER = new Color(223, 230, 233);
@@ -33,12 +33,10 @@ public class LoginScreen extends JFrame {
         setResizable(false);
         getContentPane().setBackground(BACKGROUND_COLOR);
 
-        // Ana Konteynır (Dış boşluklar)
         JPanel mainContainer = new JPanel(new BorderLayout());
         mainContainer.setBackground(BACKGROUND_COLOR);
         mainContainer.setBorder(new EmptyBorder(40, 50, 40, 50));
 
-        // 1. ÜST KISIM: Başlık Bölümü
         JLabel lblHeader = new JLabel("FUEL STATION");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 26));
         lblHeader.setForeground(PRIMARY_COLOR);
@@ -56,34 +54,30 @@ public class LoginScreen extends JFrame {
         headerPanel.setBorder(new EmptyBorder(0, 0, 30, 0));
         mainContainer.add(headerPanel, BorderLayout.NORTH);
 
-        // 2. ORTA KISIM: Giriş Alanları (BoxLayout ile Dikey Hizalama)
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
         formPanel.setOpaque(false);
 
-        // Username Bölümü
         JLabel lblUser = createInputLabel("Username");
         lblUser.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(lblUser);
 
         txtUsername = createStyledTextField();
-        txtUsername.setAlignmentX(Component.CENTER_ALIGNMENT); // Ortala
+        txtUsername.setAlignmentX(Component.CENTER_ALIGNMENT); 
         formPanel.add(txtUsername);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 15))); // İki kutu arası boşluk
+        formPanel.add(Box.createRigidArea(new Dimension(0, 15))); 
 
-        // Password Bölümü
         JLabel lblPass = createInputLabel("Password");
         lblPass.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(lblPass);
 
         txtPassword = createStyledPasswordField();
-        txtPassword.setAlignmentX(Component.CENTER_ALIGNMENT); // Ortala
+        txtPassword.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(txtPassword);
 
         mainContainer.add(formPanel, BorderLayout.CENTER);
 
-        // 3. ALT KISIM: Buton Bölümü
         btnLogin = new JButton("LOGIN");
         styleLoginButton(btnLogin);
         btnLogin.setAlignmentX(Component.CENTER_ALIGNMENT); // Ortala
@@ -98,10 +92,9 @@ public class LoginScreen extends JFrame {
 
         add(mainContainer);
         pack();
-        setLocationRelativeTo(null); // Ekranın ortasında açılır
+        setLocationRelativeTo(null); 
     }
 
-    // Etiketler için standart stil
     private JLabel createInputLabel(String text) {
         JLabel label = new JLabel(text);
         label.setFont(new Font("Segoe UI", Font.BOLD, 13));
@@ -110,23 +103,19 @@ public class LoginScreen extends JFrame {
         return label;
     }
 
-    // Modern TextField oluşturucu
     private JTextField createStyledTextField() {
         JTextField field = new JTextField();
         applyFieldStyle(field);
         return field;
     }
 
-    // Modern PasswordField oluşturucu
     private JPasswordField createStyledPasswordField() {
         JPasswordField field = new JPasswordField();
         applyFieldStyle(field);
         return field;
     }
 
-    // Input alanlarını butonla aynı genişliğe (300px) getiren stil
     private void applyFieldStyle(JTextField field) {
-        // Genişlik ayarı: 300px genişlik, 40px yükseklik
         field.setPreferredSize(new Dimension(300, 40));
         field.setMaximumSize(new Dimension(300, 40));
         field.setMinimumSize(new Dimension(300, 40));
@@ -134,12 +123,10 @@ public class LoginScreen extends JFrame {
         field.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         field.setBackground(Color.WHITE);
 
-        // İçeriden boşluk ve ince gri kenarlık
         field.setBorder(BorderFactory.createCompoundBorder(
                 new LineBorder(INPUT_BORDER, 1),
                 new EmptyBorder(5, 10, 5, 10)));
 
-        // Odaklanma (Focus) Efekti
         field.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 field.setBorder(BorderFactory.createCompoundBorder(
@@ -154,9 +141,8 @@ public class LoginScreen extends JFrame {
         });
     }
 
-    // Login butonunu 300px genişliğinde ve modern renkte tasarlar
     private void styleLoginButton(JButton btn) {
-        btn.setPreferredSize(new Dimension(300, 45)); // Inputlarla aynı genişlik
+        btn.setPreferredSize(new Dimension(300, 45)); 
         btn.setMaximumSize(new Dimension(300, 45));
 
         btn.setBackground(PRIMARY_COLOR);
@@ -166,15 +152,12 @@ public class LoginScreen extends JFrame {
         btn.setBorderPainted(false);
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        // Üzerine gelince renk değiştirme (Hover)
         btn.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent e) { btn.setBackground(HOVER_COLOR); }
             public void mouseExited(MouseEvent e) { btn.setBackground(PRIMARY_COLOR); }
         });
     }
 
-    // Giriş Denemesi Mantığı
-// Giriş Denemesi Mantığı
     private void attemptLogin() {
         String username = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
@@ -183,16 +166,14 @@ public class LoginScreen extends JFrame {
             JOptionPane.showMessageDialog(this, "Login Successful!",
                     "Fuel Station", JOptionPane.INFORMATION_MESSAGE);
 
-            // Başarılı girişte direkt Dashboard sayfasına yönlendirilir
             new DashboardScreen().setVisible(true);
-            dispose(); // Login penceresini kapatır
+            dispose(); 
         } else {
             JOptionPane.showMessageDialog(this, "Invalid credentials. Please try again.",
                     "Login Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    // Veritabanı Sorgusu
     private boolean authenticateUser(String username, String password) {
         Connection conn = DBConnection.getConnection();
         if (conn == null) return false;
@@ -202,7 +183,7 @@ public class LoginScreen extends JFrame {
             pstmt.setString(1, username);
             pstmt.setString(2, password);
             try (ResultSet rs = pstmt.executeQuery()) {
-                return rs.next(); // Kayıt bulunduysa true döner
+                return rs.next(); 
             }
         } catch (SQLException e) {
             System.err.println("Login Error: " + e.getMessage());

@@ -12,7 +12,6 @@ public class UserRecordScreen extends JFrame {
 
     private JTable userTable;
 
-    // Modern Renk Paleti
     private final Color PRIMARY_COLOR = new Color(41, 128, 185);
     private final Color WARNING_COLOR = new Color(243, 156, 18);
     private final Color DANGER_COLOR = new Color(231, 76, 60);
@@ -31,14 +30,12 @@ public class UserRecordScreen extends JFrame {
         mainContainer.setOpaque(false);
         mainContainer.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // HEADER
         JLabel lblHeader = new JLabel("USER ACCOUNT MANAGEMENT");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblHeader.setForeground(PRIMARY_COLOR);
         lblHeader.setBorder(new EmptyBorder(0, 0, 15, 0));
         mainContainer.add(lblHeader, BorderLayout.NORTH);
 
-        // TABLE
         userTable = new JTable();
         styleTable(userTable);
         loadUserData();
@@ -48,11 +45,9 @@ public class UserRecordScreen extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         mainContainer.add(scrollPane, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         controlPanel.setOpaque(false);
 
-        // DÜZELTİLDİ: Artık DashboardScreen'e yönlendiriyor
         JButton btnHome = new JButton("Back to Dashboard");
         styleButton(btnHome, SECONDARY_COLOR);
         btnHome.addActionListener(e -> {

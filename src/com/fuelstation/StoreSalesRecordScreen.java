@@ -7,15 +7,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.sql.*;
 import java.util.Vector;
-import java.math.BigDecimal;
 
-//SalesDetail
 public class StoreSalesRecordScreen extends JFrame {
 
     private JTable detailsTable;
     private DefaultTableModel model;
 
-    // Modern Renk Paleti
     private final Color PRIMARY_COLOR = new Color(41, 128, 185);
     private final Color WARNING_COLOR = new Color(243, 156, 18);
     private final Color DANGER_COLOR = new Color(231, 76, 60);
@@ -25,7 +22,7 @@ public class StoreSalesRecordScreen extends JFrame {
     private final Color TABLE_HEADER_BG = new Color(52, 73, 94);
 
     public StoreSalesRecordScreen() {
-        // Pencere başlığı güncellendi
+
         super("Sales Detail Management");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getContentPane().setBackground(BACKGROUND_COLOR);
@@ -35,14 +32,12 @@ public class StoreSalesRecordScreen extends JFrame {
         mainContainer.setOpaque(false);
         mainContainer.setBorder(new EmptyBorder(20, 20, 20, 20));
 
-        // HEADER - İstediğin gibi "SALES DETAIL" olarak güncellendi
         JLabel lblHeader = new JLabel("SALES DETAIL");
         lblHeader.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblHeader.setForeground(PRIMARY_COLOR);
         lblHeader.setBorder(new EmptyBorder(0, 0, 15, 0));
         mainContainer.add(lblHeader, BorderLayout.NORTH);
 
-        // TABLE
         detailsTable = new JTable();
         styleTable(detailsTable);
         loadDetailsData();
@@ -52,7 +47,6 @@ public class StoreSalesRecordScreen extends JFrame {
         scrollPane.getViewport().setBackground(Color.WHITE);
         mainContainer.add(scrollPane, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel controlPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
         controlPanel.setOpaque(false);
 
