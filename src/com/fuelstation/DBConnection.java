@@ -16,7 +16,7 @@ public class DBConnection {
             // 1. Load the JDBC driver class
             Class.forName(DBConfig.DRIVER_CLASS);
             
-            // 2. Establish the connection
+           
             connection = DriverManager.getConnection(DBConfig.DB_URL, DBConfig.DB_USER, DBConfig.DB_PASSWORD);
             
         } 

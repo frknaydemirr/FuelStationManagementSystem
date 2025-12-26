@@ -8,16 +8,15 @@ import java.awt.event.MouseEvent;
 
 public class DashboardScreen extends JFrame {
 
-    // Renk Paleti
-    private final Color PRIMARY_COLOR = new Color(41, 128, 185); // Mavi
-    private final Color SUCCESS_COLOR = new Color(39, 174, 96);  // Yeşil
-    private final Color ACCENT_COLOR = new Color(142, 68, 173);   // Mor
-    private final Color WARNING_COLOR = new Color(243, 156, 18); // Turuncu
-    private final Color INFO_COLOR = new Color(52, 152, 219);    // Açık Mavi
-    private final Color PUMP_COLOR = new Color(230, 126, 34);    // Koyu Turuncu
-    private final Color PHONE_COLOR = new Color(22, 160, 133);   // Turkuaz
-    private final Color STORE_COLOR = new Color(192, 57, 43);    // Koyu Kırmızı
-    private final Color DANGER_COLOR = new Color(231, 76, 60);   // Çıkış Butonu Rengi
+    private final Color PRIMARY_COLOR = new Color(41, 128, 185); 
+    private final Color SUCCESS_COLOR = new Color(39, 174, 96);  
+    private final Color ACCENT_COLOR = new Color(142, 68, 173);   
+    private final Color WARNING_COLOR = new Color(243, 156, 18); 
+    private final Color INFO_COLOR = new Color(52, 152, 219);    
+    private final Color PUMP_COLOR = new Color(230, 126, 34);    
+    private final Color PHONE_COLOR = new Color(22, 160, 133);   
+    private final Color STORE_COLOR = new Color(192, 57, 43);  
+    private final Color DANGER_COLOR = new Color(231, 76, 60);  
     private final Color BACKGROUND_COLOR = new Color(248, 249, 250);
 
     public DashboardScreen() {
@@ -30,7 +29,6 @@ public class DashboardScreen extends JFrame {
         mainPanel.setOpaque(false);
         mainPanel.setBorder(new EmptyBorder(40, 40, 40, 40));
 
-        // ÜST BAŞLIK BÖLÜMÜ
         JPanel headerPanel = new JPanel(new GridLayout(2, 1));
         headerPanel.setOpaque(false);
 
@@ -47,7 +45,6 @@ public class DashboardScreen extends JFrame {
         headerPanel.add(lblSub);
         mainPanel.add(headerPanel, BorderLayout.NORTH);
 
-        // MERKEZİ BUTON PANELİ
         JPanel gridPanel = new JPanel(new GridLayout(4, 2, 30, 25));
         gridPanel.setOpaque(false);
         gridPanel.setBorder(new EmptyBorder(30, 0, 30, 0));
@@ -94,7 +91,7 @@ public class DashboardScreen extends JFrame {
 
         mainPanel.add(gridPanel, BorderLayout.CENTER);
 
-        // --- GÜNCELLENMİŞ LOGOUT BUTONU ---
+
         JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         footerPanel.setOpaque(false);
 
